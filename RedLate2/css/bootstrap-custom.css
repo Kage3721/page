@@ -1,0 +1,29 @@
+body { margin: 0; background: #7a2122 url('../images/body_bg.gif') repeat-x top; font-family: Helvetica, Arial, sans-serif; font-size: 14px; color: #333; }
+a { color: #7a2122; }
+a:hover { color: #a32f30; }
+span.amp { font-family: Baskerville, 'Palatino', serif; font-style: italic; }
+/* Preserve the desktop size while Bootstrap handles mobile widths. */
+#masthead, #mainContent { max-width: 810px; }
+#masthead { margin-top: 20px; color: #fff; }
+.navbar-brand { max-width: calc(100% - 65px); }
+.navbar-brand img { max-width: 100%; }
+#nav .nav-link { color: #fff; }
+#nav .nav-link.active, #nav .nav-link:hover { color: #fff; text-decoration: underline; text-underline-offset: 6px; }
+#mainContent { background: #fff; border: 5px solid #5c0505; }
+#titleBar h1 { margin: 0; padding: 12px 10px; font-size: 20px; text-align: center; background: #eee url('../images/tagline_bg.gif') repeat-x; }
+#content h2 { font-size: 24px; margin-bottom: 12px; }
+#content p { line-height: 1.5; }
+#link-list { margin-top: 20px; padding: 0; list-style: none; }
+#link-list li { margin-bottom: 10px; }
+#sidebar { background: #eee; padding-top: 12px; padding-bottom: 12px; }
+#sidebar h2 { border-bottom: 1px solid #ccc; margin-bottom: 18px; padding-bottom: 8px; font-size: 22px; font-weight: bold; }
+#port { margin-bottom: 0; }
+#port img { border-radius: 0; border: 5px solid #ddd; }
+#footer { margin-top: 24px; padding: 14px; background: #eee; border-top: 2px solid #ddd; text-align: center; color: #666; }
+#footer p { margin: 0; }
+@media (max-width: 767px) {
+    #masthead { margin-top: 8px; }
+    #mainContent { width: calc(100% - 20px); }
+    #titleBar h1 { font-size: 18px; }
+    #content h2 { font-size: 22px; }
+}
