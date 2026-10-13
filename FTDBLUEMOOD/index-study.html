@@ -1,0 +1,165 @@
+<!DOCTYPE html> <!-- 宣告使用 HTML5，讓瀏覽器採用標準模式。 -->
+<html lang="zh-Hant"> <!-- 網頁語言是繁體中文；不是設定文字顏色或字型。 -->
+<!-- 學習版：原本 index.html 不變；此檔載入 css/style-study.css。 -->
+<!-- 修改文字、連結、圖片路徑看 HTML；修改顏色、大小、距離看 CSS。 -->
+<!-- 本頁保留原網站行為；href="#" 是示範連結，尚未指向真正的頁面。 -->
+<head> <!-- 開始網頁設定區，這裡的設定通常不直接顯示在頁面中。 -->
+    <meta charset="UTF-8"> <!-- 使用 UTF-8 編碼，讓中文註釋與文字正常顯示。 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 配合裝置寬度顯示，初始縮放為 1；手機排版需要這行。 -->
+    <title>FTDBLUEMOOD</title> <!-- 瀏覽器分頁名稱；要改分頁標題就改此文字。 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"> <!-- 載入 Bootstrap 5.3.8 樣式；需網路，提供輪播樣式、w-100 等類別。 -->
+    <link rel="stylesheet" href="css/style-study.css"> <!-- 載入學習版 CSS；位置在 Bootstrap 後方，方便自訂樣式。 -->
+</head> <!-- 結束網頁設定區。 -->
+<body> <!-- 開始實際顯示的內容；整頁背景在 CSS 的 body 設定。 -->
+    <div class="page-wrapper"> <!-- 整頁外層；CSS 的 .page-wrapper 控制網站寬度與置中。 -->
+        <!-- Logo：網站名称與標語區。 -->
+        <header class="site-header"> <!-- 頁首區；CSS 的 .site-header 控制文字顏色和內距。 -->
+            <h1>FTDBLUEMOOD</h1> <!-- 網站大標題；修改名稱改這裡，字體大小改 .site-header h1。 -->
+            <p>SMALL COMPANY SLOGAN GOES HERE</p> <!-- 公司標語；文字改這裡，大小與間距改 .site-header p。 -->
+        </header> <!-- 結束網站名稱與標語區。 -->
+        <main class="main-box"> <!-- 主要內容外框；白底與淺藍邊框在 .main-box 設定。 -->
+            <!-- Carousel：四張圖片輪播，這部分使用 Bootstrap。 -->
+            <div id="topCarousel" class="carousel slide" data-bs-ride="carousel"> <!-- id 供按鈕指定；carousel slide 套用輪播；data-bs-ride 開啟自動播放。 -->
+                <div class="carousel-inner"> <!-- 包住所有輪播項目，提供輪播顯示範圍。 -->
+                    <div class="carousel-item active"> <!-- 第一張輪播項目；active 指定一開始顯示哪張，只給一張。 -->
+                        <img src="images/header.jpg" class="d-block w-100 header-img" alt="header1"> <!-- src 改第一張圖片；d-block 設區塊；w-100 寬度 100%；高度改 CSS 的 .header-img。 -->
+                    </div> <!-- 結束第一張輪播項目。 -->
+                    <div class="carousel-item"> <!-- 第二張輪播項目，未加 active，所以不是初始圖片。 -->
+                        <img src="images/header2.jpg" class="d-block w-100 header-img" alt="header2"> <!-- 第二張圖片；alt 是圖片替代文字，可改成具體描述。 -->
+                    </div> <!-- 結束第二張輪播項目。 -->
+                    <div class="carousel-item"> <!-- 第三張輪播項目。 -->
+                        <img src="images/header3.jpg" class="d-block w-100 header-img" alt="header3"> <!-- 第三張圖片；換圖改 src，大小改 .header-img。 -->
+                    </div> <!-- 結束第三張輪播項目。 -->
+                    <div class="carousel-item"> <!-- 第四張輪播項目。 -->
+                        <img src="images/header4.jpg" class="d-block w-100 header-img" alt="header4"> <!-- 第四張圖片；若增加第五張，要新增一整組 carousel-item。 -->
+                    </div> <!-- 結束第四張輪播項目。 -->
+                </div> <!-- 結束 carousel-inner，也就是四張輪播圖片的容器。 -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#topCarousel" data-bs-slide="prev"> <!-- 上一張按鈕；type 避免提交表單；target 必須對應輪播 id；prev 表示往前。 -->
+                    <span class="carousel-control-prev-icon"></span> <!-- Bootstrap 提供的上一張箭頭圖示。 -->
+                </button> <!-- 結束上一張按鈕。 -->
+                <button class="carousel-control-next" type="button" data-bs-target="#topCarousel" data-bs-slide="next"> <!-- 下一張按鈕；next 表示往後，仍控制同一個 topCarousel。 -->
+                    <span class="carousel-control-next-icon"></span> <!-- Bootstrap 提供的下一張箭頭圖示。 -->
+                </button> <!-- 結束下一張按鈕。 -->
+            </div> <!-- 結束整個 topCarousel 輪播區。 -->
+            <!-- Menu：導覽列，位置與漸層是自訂 CSS，不是 Bootstrap Navbar。 -->
+            <nav class="main-nav"> <!-- 導覽區；高度、排列、漸層背景在 .main-nav 設定。 -->
+                <a href="#">Home</a> <!-- 首頁連結；改顯示文字改 Home，改目的地改 href。 -->
+                <a href="#">Blog</a> <!-- 部落格連結；# 目前只是指向本頁頂部。 -->
+                <a href="#">Gallery</a> <!-- 圖庫連結；按鈕文字的大小和內距在 .main-nav a。 -->
+                <a href="#">About</a> <!-- 關於連結；要連到另一頁可填 about.html。 -->
+                <a href="#">Contact</a> <!-- 聯絡連結；若要頁內跳轉，需指向存在的 id，例如 #contact。 -->
+            </nav> <!-- 結束導覽列。 -->
+            <!-- Top info：上方三欄資訊；欄數由 CSS Grid 的 .top-info 設定。 -->
+            <section class="top-info"> <!-- 三欄的共同容器；欄距、內距在 .top-info。 -->
+                <div class="info-box"> <!-- 第一欄資訊。 -->
+                    <h2>Your Options</h2> <!-- 第一欄標題；颜色和大小改 .info-box h2。 -->
+                    <div class="info-content"> <!-- 圖示與文字並排的容器；.info-content 使用 Flex。 -->
+                        <img src="images/icon1.png" alt="option"> <!-- 第一欄圖示；目前缺這個檔案，需自行放入 images 才能顯示。 -->
+                        <p> <!-- 開始第一欄文字段落。 -->
+                            <a href="#">Cras hendrerit est nec libero ornare sagittis.</a><br> <!-- 藍色文字連結；br 表示在這裡換行。 -->
+                            Donec interdum dignissim risus et vestibulum. <!-- 一般示範文字；可以直接替換內容。 -->
+                        </p> <!-- 結束第一欄段落；字級改 .info-content p。 -->
+                    </div> <!-- 結束第一欄圖示與文字容器。 -->
+                </div> <!-- 結束第一欄。 -->
+                <div class="info-box"> <!-- 第二欄資訊。 -->
+                    <h2>Company News</h2> <!-- 第二欄標題，直接修改這段文字即可換名稱。 -->
+                    <div class="info-content"> <!-- 第二欄圖示與文字並排。 -->
+                        <img src="images/icon2.png" alt="news"> <!-- 第二欄圖示；目前缺此檔案；大小在 .info-content img。 -->
+                        <p> <!-- 開始第二欄段落。 -->
+                            <a href="#">Donec interdum dignissim risus et vestibulum.</a><br> <!-- 第二欄連結與換行；連結颜色改 .info-content a。 -->
+                            Donec eget nisi id magna tempor laoreet. <!-- 第二欄一般文字。 -->
+                        </p> <!-- 結束第二欄段落。 -->
+                    </div> <!-- 結束第二欄圖示與文字容器。 -->
+                </div> <!-- 結束第二欄。 -->
+                <div class="info-box"> <!-- 第三欄資訊。 -->
+                    <h2>Have a Question?</h2> <!-- 第三欄標題。 -->
+                    <div class="info-content"> <!-- 第三欄圖示與文字並排。 -->
+                        <img src="images/icon3.png" alt="question"> <!-- 第三欄圖示；目前缺此檔案，需放入 images。 -->
+                        <p> <!-- 開始第三欄段落。 -->
+                            <a href="#">Cras hendrerit est nec libero ornare sagittis.</a><br> <!-- 第三欄連結文字與換行。 -->
+                            Donec interdum dignissim risus et vestibulum. <!-- 第三欄一般文字。 -->
+                        </p> <!-- 結束第三欄段落。 -->
+                    </div> <!-- 結束第三欄圖示與文字容器。 -->
+                </div> <!-- 結束第三欄。 -->
+            </section> <!-- 結束上方三欄資訊區。 -->
+            <!-- Middle：中間左大右小；比例由 .middle-area 的 2fr 1fr 設定。 -->
+            <section class="middle-area"> <!-- 中間兩欄的共同容器。 -->
+                <div class="people-panel"> <!-- 左側人物內容面板；底色、邊框和內距在 .people-panel。 -->
+                    <h2>Etiam felis ipsum</h2> <!-- 人物面板標題。 -->
+                    <div class="people-grid"> <!-- 四組人物以兩欄排列；欄數與間距改 .people-grid。 -->
+                        <div class="person"> <!-- 第一組人物：圖片與介紹並排。 -->
+                            <img src="images/person1.jpg" alt="person1"> <!-- 第一張人物照；目前缺檔；寬高和裁切改 .person img。 -->
+                            <p> <!-- 第一位人物的介紹段落。 -->
+                                Vivamus ut risus sit amet ante tempor dapibus eget at quam. <!-- 第一位介紹文字的第一部分。 -->
+                                In blandit ante at massa faucibus. <!-- 第二部分；HTML 原始碼換行通常顯示成空白，不強制換行。 -->
+                            </p> <!-- 結束第一位人物介紹；字級與颜色改 .person p。 -->
+                        </div> <!-- 結束第一組人物。 -->
+                        <div class="person"> <!-- 第二組人物。 -->
+                            <img src="images/person2.jpg" alt="person2"> <!-- 第二張人物照；目前缺檔，換圖改 src。 -->
+                            <p> <!-- 開始第二位人物介紹。 -->
+                                In dui eget nibh viverra mollis eget eget lacus. <!-- 第二位介紹文字的第一部分。 -->
+                                In non velit augue. <!-- 第二位介紹文字的第二部分。 -->
+                            </p> <!-- 結束第二位人物介紹。 -->
+                        </div> <!-- 結束第二組人物。 -->
+                        <div class="person"> <!-- 第三組人物。 -->
+                            <img src="images/person3.jpg" alt="person3"> <!-- 第三張人物照；目前缺檔。 -->
+                            <p> <!-- 開始第三位人物介紹。 -->
+                                Koreet aliquam leo tellus. <!-- 第三位介绍的第一部分，保留原始示範文字。 -->
+                                Dolor dapibus molestie nulla. <!-- 第三位介紹的第二部分。 -->
+                            </p> <!-- 結束第三位人物介紹。 -->
+                        </div> <!-- 結束第三組人物。 -->
+                        <div class="person"> <!-- 第四組人物。 -->
+                            <img src="images/person4.jpg" alt="person4"> <!-- 第四張人物照；目前缺檔。 -->
+                            <p> <!-- 開始第四位人物介紹。 -->
+                                Nullam vehicula odio in tellus venenatis a facilisis metus mollis. <!-- 第四位人物介绍文字。 -->
+                            </p> <!-- 結束第四位人物介紹。 -->
+                        </div> <!-- 結束第四組人物。 -->
+                    </div> <!-- 結束四組人物的兩欄容器。 -->
+                </div> <!-- 結束左側人物面板。 -->
+                <aside class="links-panel"> <!-- 右側連結面板；底色與人物面板共用 CSS 規則。 -->
+                    <h2>Duis blandit ultrices</h2> <!-- 右側面板標題。 -->
+                    <ul> <!-- 開始無序清單；縮排在 .links-panel ul 設定。 -->
+                        <li><a href="#">DONEC TINCIDUNT PURUS VITAE</a></li> <!-- 第一個清單連結；li 是清單項目，a 是連結。 -->
+                        <li><a href="#">DONEC NON EGESTAS LECTUS LACUS</a></li> <!-- 第二個清單連結。 -->
+                        <li><a href="#">CRAS PORTTITOR HENDRERIT EUISMOD</a></li> <!-- 第三個清單連結。 -->
+                        <li><a href="#">CUM SOCIIS NATOQUE PENATIBUS</a></li> <!-- 第四個清單連結。 -->
+                        <li><a href="#">QUISQUE MAURIS LIGULA COMMODO</a></li> <!-- 第五個清單連結。 -->
+                        <li><a href="#">CURABITUR DIGNISSIM COMMODO</a></li> <!-- 第六個清單連結。 -->
+                        <li><a href="#">DONEC NON EGESTAS LECTUS LACUS</a></li> <!-- 第七個清單連結；新增項目可複製一整行 li。 -->
+                    </ul> <!-- 結束右側清單。 -->
+                    <a class="read-more" href="#">READ MORE</a> <!-- 閱讀更多連結；蓝色與粗體改 .read-more。 -->
+                </aside> <!-- 結束右側連結面板。 -->
+            </section> <!-- 結束中間兩欄區。 -->
+            <!-- Bottom：下方左側文章與右側圖片文章。 -->
+            <section class="bottom-area"> <!-- 下方两欄容器；欄位比例、間距、內距改 .bottom-area。 -->
+                <article> <!-- 左側文章。 -->
+                    <h2>Nullam consectetur</h2> <!-- 左側文章標題；外觀改 .bottom-area h2。 -->
+                    <strong> <!-- 強調內容，瀏覽器預設通常以粗體顯示。 -->
+                        Phasellus porta. Fusce suscipit varius mi. <!-- 粗體文章摘要，可直接替換。 -->
+                    </strong> <!-- 結束強調內容。 -->
+                    <p> <!-- 左側文章的一般段落。 -->
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. <!-- 示範文章第一行。 -->
+                        Donec et quam magna. Morbi sed elit erat. Proin sodales <!-- 示範文章第二行；實際換行由可用寬度決定。 -->
+                        interdum erat, at mollis ante tempor sed. <!-- 示範文章第三行；段落字級改 .bottom-area p。 -->
+                    </p> <!-- 結束左側文章段落。 -->
+                    <a href="#">READ MORE</a> <!-- 左側文章的閱讀更多連結。 -->
+                </article> <!-- 結束左側文章。 -->
+                <article> <!-- 右側圖片文章。 -->
+                    <h2>In semper massa</h2> <!-- 右側文章標題。 -->
+                    <img src="images/bottom.jpg" class="bottom-img" alt="bottom image"> <!-- 下方圖片；目前缺檔；尺寸與裁切改 .bottom-img。 -->
+                    <p> <!-- 右側文章段落。 -->
+                        Praesent vestibulum molestie lacus. <!-- 右側文章第一部分。 -->
+                        Aenean Cum sociis natoque penatibus et magnis dis parturient montes. <!-- 右側文章第二部分。 -->
+                    </p> <!-- 結束右側文章段落。 -->
+                    <a href="#">READ MORE</a> <!-- 右側文章的閱讀更多連結。 -->
+                </article> <!-- 結束右側圖片文章。 -->
+            </section> <!-- 結束下方兩欄區。 -->
+            <!-- Footer：頁尾版權區。 -->
+            <footer> <!-- 頁尾；漸層、文字大小與內距改 CSS 的 footer。 -->
+                Copyright 2011. Designed by Free Web Templates. <!-- 版權文字；改年份或作者名稱改這一行。 -->
+            </footer> <!-- 結束頁尾。 -->
+        </main> <!-- 結束白底、淺藍外框的主要內容。 -->
+    </div> <!-- 結束整頁 page-wrapper。 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script> <!-- 載入 Bootstrap 的互動程式；沒有這行輪播按鈕與自動播放不會正常運作；版本需配合 CSS。 -->
+</body> <!-- 結束所有頁面內容。 -->
+</html> <!-- 結束 HTML 文件。 -->

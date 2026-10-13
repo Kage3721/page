@@ -1,0 +1,565 @@
+CSS Quiz - 英文原文、中文翻譯與解析
+來源：使用者提供的 TXT；英文題目、選項、順序、程式碼及原始作答標記完整保留。
+Your answer = 原本選的答案；Correct answer = 原檔標示的正確答案。
+若原題沒有 Correct answer 標記，則由作答結果及題意核對正確選項，並在每題另列「正確答案（英文原文）」。
+中文選項序號依原檔順序排列；解析是新增的學習說明，不會更動英文答案。
+這是所提供題目的對照複習版，不代表網站所有可能題目或教師完整考試範圍。
+
+【原檔成績摘要】
+CSS Quiz Results
+Score: 25 of 25
+
+100% Correct:
+
+================================================================
+【英文原文】
+Question 1:
+What does CSS stand for?
+
+Cascading Style Sheets    Your answer  
+Computer Style Sheets
+Creative Style Sheets
+Colorful Style Sheets
+
+正確答案（英文原文）：Cascading Style Sheets
+
+【中文翻譯】
+題目：CSS 是什麼英文名稱的縮寫？
+選項 1：階層式樣式表（也常譯為串接樣式表）
+選項 2：電腦樣式表
+選項 3：創意樣式表
+選項 4：多彩樣式表
+中文答案：選項 1，階層式樣式表（也常譯為串接樣式表）
+
+【解析】
+CSS 的全名是 Cascading Style Sheets，用來設定網頁的顏色、字型與版面等呈現方式。stand for 是縮寫代表什麼。Cascading 對應樣式規則透過階層與優先規則決定結果。
+
+================================================================
+【英文原文】
+Question 2:
+What is the correct HTML for referring to an external style sheet?
+
+<link rel="stylesheet" type="text/css" href="mystyle.css">    Your answer  
+<stylesheet>mystyle.css</stylesheet>
+<style src="mystyle.css">
+
+正確答案（英文原文）：<link rel="stylesheet" type="text/css" href="mystyle.css">
+
+【中文翻譯】
+題目：引用外部樣式表的正確 HTML 寫法是什麼？
+選項 1：使用 link，rel 指定 stylesheet，href 指定 CSS 檔案
+選項 2：使用 stylesheet 標籤包住檔名（不正確）
+選項 3：使用 style 的 src 屬性（不正確）
+中文答案：選項 1，使用 link，rel 指定 stylesheet，href 指定 CSS 檔案
+
+【解析】
+外部 CSS 使用 link 元素，href 指向檔案，rel="stylesheet" 表示樣式表。原題的 type="text/css" 是有效寫法，這裡完整保留；HTML5 中通常也可省略 type。style 元素則用來寫內部 CSS。
+
+================================================================
+【英文原文】
+Question 3:
+Where in an HTML document is the correct place to refer to an external style sheet?
+
+In the <head> section    Your answer  
+At the end of the document
+In the <body> section
+
+正確答案（英文原文）：In the <head> section
+
+【中文翻譯】
+題目：在 HTML 文件中，引用外部樣式表的標準位置是哪裡？
+選項 1：head 區域內
+選項 2：文件的最末端
+選項 3：body 區域內
+中文答案：選項 1，head 區域內
+
+【解析】
+本題選 head，通常在此放置引用外部樣式表的 link，讓樣式能及早載入。不要和 body 裡的可見頁面內容混淆。這裡問的是標準放置位置，並非列舉所有瀏覽器能處理的情況。
+
+================================================================
+【英文原文】
+Question 4:
+Which HTML tag is used to define an internal style sheet?
+
+<style>    Your answer  
+<css>
+<script>
+
+正確答案（英文原文）：<style>
+
+【中文翻譯】
+題目：哪個 HTML 標籤用來定義內部樣式表？
+選項 1：style：內部樣式表
+選項 2：css：非標準樣式表標籤
+選項 3：script：程式腳本
+中文答案：選項 1，style：內部樣式表
+
+【解析】
+internal style sheet 是寫在 HTML 文件內的樣式表，放在 style 元素中。外部樣式表使用 link；JavaScript 腳本通常使用 script；css 不是對應的 HTML 標籤。
+
+================================================================
+【英文原文】
+Question 5:
+Which HTML attribute is used to define inline styles?
+
+style    Your answer  
+font
+styles
+class
+
+正確答案（英文原文）：style
+
+【中文翻譯】
+題目：哪個 HTML 屬性用來定義行內樣式？
+選項 1：style：行內樣式屬性
+選項 2：font：不是本題的屬性
+選項 3：styles：不正確的屬性名稱
+選項 4：class：類別名稱屬性
+中文答案：選項 1，style：行內樣式屬性
+
+【解析】
+行內樣式直接寫在元素的 style 屬性內，例如 <p style="color:red;">。inline styles 是行內樣式。class 用來指定類別，可搭配 CSS 選擇器套用樣式，但不是直接撰寫行內宣告的屬性。
+
+================================================================
+【英文原文】
+Question 6:
+Which is the correct CSS syntax?
+
+body {color: black;}    Your answer  
+{body:color=black;}
+body:color=black;
+{body;color:black;}
+
+正確答案（英文原文）：body {color: black;}
+
+【中文翻譯】
+題目：哪個 CSS 語法是正確的？
+選項 1：body 選擇器後接大括號，內含 color: black;（正確）
+選項 2：把 body 放在大括號內，使用等號（不正確）
+選項 3：未使用宣告區塊，且使用等號（不正確）
+選項 4：選擇器放在大括號內，屬性與值使用分號分隔（不正確）
+中文答案：選項 1，body 選擇器後接大括號，內含 color: black;（正確）
+
+【解析】
+CSS 規則是「選擇器 { 屬性: 值; }」。選擇器在大括號外，屬性與值之間用冒號，宣告間用分號。color 是文字顏色，black 是黑色；不要使用等號。
+
+================================================================
+【英文原文】
+Question 7:
+How do you insert a comment in a CSS file?
+
+/* this is a comment */    Your answer  
+' this is a comment
+// this is a comment //
+// this is a comment
+
+正確答案（英文原文）：/* this is a comment */
+
+【中文翻譯】
+題目：如何在 CSS 檔案中加入註解？
+選項 1：以 /* 開始、以 */ 結束的註解
+選項 2：以單引號開始的文字（不是 CSS 註解）
+選項 3：以雙斜線包住文字（不是 CSS 註解）
+選項 4：以雙斜線開始的文字（不是 CSS 註解）
+中文答案：選項 1，以 /* 開始、以 */ 結束的註解
+
+【解析】
+CSS 註解使用 /* ... */，可跨多行。this is a comment 是「這是一段註解」。不要與 JavaScript 的 // 單行註解、HTML 的 <!-- ... --> 混淆。
+
+================================================================
+【英文原文】
+Question 8:
+Which property is used to change the background color?
+
+background-color    Your answer  
+color
+bgcolor
+
+正確答案（英文原文）：background-color
+
+【中文翻譯】
+題目：哪個屬性用來改變背景顏色？
+選項 1：background-color：背景顏色
+選項 2：color：文字顏色
+選項 3：bgcolor：不是 CSS 的背景色屬性
+中文答案：選項 1，background-color：背景顏色
+
+【解析】
+背景顏色用 background-color，文字顏色用 color。英文 background 是背景。bgcolor 不能當作 CSS 屬性來寫；例如 background-color: yellow; 才是 CSS 宣告。
+
+================================================================
+【英文原文】
+Question 9:
+How do you add a background color for all <h1> elements?
+
+h1 {background-color:#FFFFFF;}    Your answer  
+all.h1 {background-color:#FFFFFF;}
+h1.all {background-color:#FFFFFF;}
+
+正確答案（英文原文）：h1 {background-color:#FFFFFF;}
+
+【中文翻譯】
+題目：如何為所有 h1 元素加入背景顏色？
+選項 1：以 h1 選擇所有 h1，將背景設為白色
+選項 2：all.h1 選取 class 為 h1 的 all 元素，不是所有 h1
+選項 3：h1.all 選取 class 為 all 的 h1，不是所有 h1
+中文答案：選項 1，以 h1 選擇所有 h1，將背景設為白色
+
+【解析】
+直接使用元素名稱 h1 作為選擇器，會選取所有 h1 元素。#FFFFFF 是白色。all 不是選取所有 h1 所需的關鍵字；點號用於類別選擇器，會改變選取條件。
+
+================================================================
+【英文原文】
+Question 10:
+Which CSS property is used to change the text color of an element?
+
+color    Your answer  
+fgcolor
+text-color
+
+正確答案（英文原文）：color
+
+【中文翻譯】
+題目：哪個 CSS 屬性用來改變元素的文字顏色？
+選項 1：color：文字顏色
+選項 2：fgcolor：不是標準 CSS 文字色屬性
+選項 3：text-color：不是標準 CSS 屬性
+中文答案：選項 1，color：文字顏色
+
+【解析】
+文字顏色使用 color，例如 color: blue;。text color 是文字顏色，但屬性名稱只有 color，不是 text-color。背景顏色是 background-color。
+
+================================================================
+【英文原文】
+Question 11:
+Which CSS property controls the text size?
+
+font-size    Your answer  
+text-size
+font-style
+text-style
+
+正確答案（英文原文）：font-size
+
+【中文翻譯】
+題目：哪個 CSS 屬性控制文字大小？
+選項 1：font-size：字體大小
+選項 2：text-size：不是本題的標準 CSS 屬性
+選項 3：font-style：字型風格，例如斜體
+選項 4：text-style：不是本題的標準 CSS 屬性
+中文答案：選項 1，font-size：字體大小
+
+【解析】
+文字大小用 font-size，例如 font-size: 20px;。size 是大小。font-style 可設定 italic 等風格；font-family 選字型；font-weight 設粗細。
+
+================================================================
+【英文原文】
+Question 12:
+What is the correct CSS syntax for making all the <p> elements bold?
+
+p {font-weight:bold;}    Your answer  
+<p style="text-size:bold;">
+p {text-size:bold;}
+<p style="font-size:bold;">
+
+正確答案（英文原文）：p {font-weight:bold;}
+
+【中文翻譯】
+題目：讓所有 p 元素變成粗體的正確 CSS 語法是什麼？
+選項 1：以 p 選取段落，將 font-weight 設為 bold（正確）
+選項 2：在單一 p 的 style 寫 text-size:bold（屬性不正確）
+選項 3：使用 p 選擇器，但寫 text-size:bold（不正確）
+選項 4：在單一 p 的 style 寫 font-size:bold（值不正確）
+中文答案：選項 1，以 p 選取段落，將 font-weight 設為 bold（正確）
+
+【解析】
+bold 是粗體，使用 font-weight。題目要求所有 p，所以使用元素選擇器 p。font-size 是大小，bold 不是合法的大小值；text-size 也不是這題正確的屬性。
+
+================================================================
+【英文原文】
+Question 13:
+How do you display hyperlinks without an underline?
+
+a {text-decoration:none;}    Your answer  
+a {text-decoration:no-underline;}
+a {decoration:no-underline;}
+a {underline:none;}
+
+正確答案（英文原文）：a {text-decoration:none;}
+
+【中文翻譯】
+題目：如何讓超連結顯示時沒有底線？
+選項 1：以 a 選取連結，設定 text-decoration:none（正確）
+選項 2：text-decoration:no-underline（值不正確）
+選項 3：decoration:no-underline（屬性與值不正確）
+選項 4：underline:none（屬性不正確）
+中文答案：選項 1，以 a 選取連結，設定 text-decoration:none（正確）
+
+【解析】
+連結元素是 a，text-decoration 用來設定文字裝飾；none 表示沒有裝飾線。without an underline 是沒有底線。正確值是 none，不是 no-underline。
+
+================================================================
+【英文原文】
+Question 14:
+How do you make each word in a text start with a capital letter?
+
+text-transform:capitalize    Your answer  
+You can't do that with CSS
+text-style:capitalize
+transform:capitalize
+
+正確答案（英文原文）：text-transform:capitalize
+
+【中文翻譯】
+題目：如何讓文字中的每個單字以大寫字母開頭？
+選項 1：text-transform:capitalize：每個單字的首字母大寫
+選項 2：CSS 無法做到（本題不正確）
+選項 3：text-style:capitalize（屬性不正確）
+選項 4：transform:capitalize（屬性用途與值不正確）
+中文答案：選項 1，text-transform:capitalize：每個單字的首字母大寫
+
+【解析】
+capitalize 使各單字的首字母大寫，不代表把所有字母都改成大寫，也不會保證其餘字母變小寫。全部大寫用 uppercase，全部小寫用 lowercase。transform 用於幾何變形，別與 text-transform 混淆。
+
+================================================================
+【英文原文】
+Question 15:
+Which property is used to change the font of an element?
+
+font-family    Your answer  
+font-weight
+font-style
+
+正確答案（英文原文）：font-family
+
+【中文翻譯】
+題目：哪個屬性用來改變元素使用的字型？
+選項 1：font-family：字型家族
+選項 2：font-weight：字體粗細
+選項 3：font-style：字型風格，例如斜體
+中文答案：選項 1，font-family：字型家族
+
+【解析】
+font-family 指定使用的字型或字型家族，例如 Arial、sans-serif。這題的 font 指字型，不是粗細或斜體。常用對照：family 選字型，size 設大小，weight 設粗細，style 設風格。
+
+================================================================
+【英文原文】
+Question 16:
+How do you make the text bold?
+
+font-weight:bold;    Your answer  
+font:bold;
+style:bold;
+
+正確答案（英文原文）：font-weight:bold;
+
+【中文翻譯】
+題目：如何將文字設為粗體？
+選項 1：font-weight:bold;：字體粗細設為粗體
+選項 2：font:bold;：font 簡寫缺少必要內容
+選項 3：style:bold;：不是正確 CSS 宣告
+中文答案：選項 1，font-weight:bold;：字體粗細設為粗體
+
+【解析】
+最直接的粗體宣告是 font-weight:bold;。font 是簡寫屬性，不能只寫 bold 就形成完整合法的字型設定；例如還需要字體大小與字型家族。style 是 HTML 屬性名稱，不是這裡的 CSS 屬性。
+
+================================================================
+【英文原文】
+Question 17:
+How do you display a border like this:
+
+The top border = 10 pixels
+The bottom border = 5 pixels
+The left border = 20 pixels
+The right border = 1pixel?
+
+border-width:10px 1px 5px 20px;    Your answer  
+border-width:10px 20px 5px 1px;
+border-width:10px 5px 20px 1px;
+border-width:5px 20px 10px 1px;
+
+正確答案（英文原文）：border-width:10px 1px 5px 20px;
+
+【中文翻譯】
+題目：如何設定這樣的邊框寬度：上方 10 像素、下方 5 像素、左方 20 像素、右方 1 像素？
+選項 1：上 10、右 1、下 5、左 20 像素（正確）
+選項 2：上 10、右 20、下 5、左 1 像素
+選項 3：上 10、右 5、下 20、左 1 像素
+選項 4：上 5、右 20、下 10、左 1 像素
+中文答案：選項 1，上 10、右 1、下 5、左 20 像素（正確）
+
+【解析】
+四值簡寫順序固定為「上、右、下、左」，沿順時針排列。題目敘述順序卻是上、下、左、右，所以不能照文字出現順序直接填入。border-width 設定寬度；實際顯示邊框時通常還需 border-style。
+
+================================================================
+【英文原文】
+Question 18:
+Which property is used to change the left margin of an element?
+
+margin-left    Your answer  
+padding-left
+indent
+
+正確答案（英文原文）：margin-left
+
+【中文翻譯】
+題目：哪個屬性用來改變元素左側的外距？
+選項 1：margin-left：左外距
+選項 2：padding-left：左內距
+選項 3：indent：不是本題正確屬性
+中文答案：選項 1，margin-left：左外距
+
+【解析】
+margin 是邊框外的距離，padding 是內容與邊框之間的距離。left margin 要選 margin-left。文字首行縮排通常使用 text-indent，不是 indent。
+
+================================================================
+【英文原文】
+Question 19:
+When using the padding property; are you allowed to use negative values?
+
+No    Your answer  
+Yes
+
+正確答案（英文原文）：No
+
+【中文翻譯】
+題目：使用 padding 屬性時，可以使用負值嗎？
+選項 1：不可以
+選項 2：可以
+中文答案：選項 1，不可以
+
+【解析】
+padding 不接受負值，例如 padding:-5px; 是無效的。注意 margin 可以使用負值；內距 padding 和外距 margin 的限制不同。negative values 是負數值。
+
+================================================================
+【英文原文】
+Question 20:
+How do you make a list that lists its items with squares?
+
+list-style-type: square;    Your answer  
+list: square;
+list-type: square;
+
+正確答案（英文原文）：list-style-type: square;
+
+【中文翻譯】
+題目：如何讓清單項目以方形符號顯示？
+選項 1：list-style-type: square;：清單符號設為方形
+選項 2：list: square;：屬性不正確
+選項 3：list-type: square;：屬性不正確
+中文答案：選項 1，list-style-type: square;：清單符號設為方形
+
+【解析】
+list-style-type 設定清單符號類型，square 表示方形，disc 表示實心圓點，circle 表示空心圓。不要把屬性簡化成不存在的 list 或 list-type。
+
+================================================================
+【英文原文】
+Question 21:
+How do you select an element with id 'demo'?
+
+#demo    Your answer  
+*demo
+.demo
+demo
+
+正確答案（英文原文）：#demo
+
+【中文翻譯】
+題目：如何選取 id 為 demo 的元素？
+選項 1：#demo：id 選擇器
+選項 2：*demo：不是本題正確寫法
+選項 3：.demo：class 選擇器
+選項 4：demo：元素名稱選擇器
+中文答案：選項 1，#demo：id 選擇器
+
+【解析】
+id 選擇器在名稱前加 #，例如 HTML 的 id="demo" 對應 CSS 的 #demo。class 選擇器使用點號 .。元素名稱選擇器則直接寫名稱，例如 p。
+
+================================================================
+【英文原文】
+Question 22:
+How do you select elements with class name 'test'?
+
+.test    Your answer  
+*test
+test
+#test
+
+正確答案（英文原文）：.test
+
+【中文翻譯】
+題目：如何選取 class 名稱為 test 的元素？
+選項 1：.test：class 選擇器
+選項 2：*test：不是本題正確寫法
+選項 3：test：元素名稱選擇器
+選項 4：#test：id 選擇器
+中文答案：選項 1，.test：class 選擇器
+
+【解析】
+class 選擇器在類別名稱前加 .，所以 class="test" 對應 .test。元素即使同時有多個類別，例如 class="test active"，仍可被 .test 選取。#test 選的是 id。
+
+================================================================
+【英文原文】
+Question 23:
+How do you select all p elements inside a div element?
+
+div p    Your answer  
+div.p
+div + p
+
+正確答案（英文原文）：div p
+
+【中文翻譯】
+題目：如何選取 div 元素裡面的所有 p 元素？
+選項 1：div p：div 裡的 p 後代元素
+選項 2：div.p：class 為 p 的 div 元素
+選項 3：div + p：緊接在 div 後面的同層 p 元素
+中文答案：選項 1，div p：div 裡的 p 後代元素
+
+【解析】
+選擇器中間的空格表示後代關係，所以 div p 可選到 div 裡直接或間接包含的 p。div > p 才只選直接子元素。div.p 的點號表示類別；div + p 的加號表示相鄰同層元素。
+
+================================================================
+【英文原文】
+Question 24:
+How do you group selectors?
+
+Separate each selector with a comma    Your answer  
+Separate each selector with a plus sign
+Separate each selector with a space
+
+正確答案（英文原文）：Separate each selector with a comma
+
+【中文翻譯】
+題目：如何將多個選擇器組成一組？
+選項 1：以逗號分隔每個選擇器
+選項 2：以加號分隔每個選擇器
+選項 3：以空格分隔每個選擇器
+中文答案：選項 1，以逗號分隔每個選擇器
+
+【解析】
+多個選擇器共用規則時使用逗號，例如 h1, p {color:red;}，表示 h1 與 p 都套用。空格建立後代關係，加號建立相鄰同層關係，並不是單純的群組分隔符號。comma 是逗號。
+
+================================================================
+【英文原文】
+Question 25:
+What is the default value of the position property?
+
+static    Your answer  
+absolute
+fixed
+relative
+
+正確答案（英文原文）：static
+
+【中文翻譯】
+題目：position 屬性的預設值是什麼？
+選項 1：static：一般文件流中的預設定位
+選項 2：absolute：絕對定位
+選項 3：fixed：固定定位
+選項 4：relative：相對定位
+中文答案：選項 1，static：一般文件流中的預設定位
+
+【解析】
+position 的初始值是 static，元素依一般文件流排列，top、right、bottom、left 不會像定位元素那樣移動它。relative、absolute、fixed 都需要另外設定，並不是預設值。
+

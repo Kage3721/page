@@ -1,0 +1,209 @@
+/* 學習版：每一行都有中文說明；原本 style.css 完全不變。 */
+/* 修改總寬看 .page-wrapper；大圖高度看 .header-img；欄位比例看 grid-template-columns。 */
+/* 修改底色看 background 或 background-color；文字顏色看 color；字級看 font-size。 */
+/* padding 是邊框內的留白，margin 是邊框外的距離，gap 是 Flex 或 Grid 項目間的空隙。 */
+/* px 是像素；% 是相對比例；fr 是 Grid 在扣掉間距後分配剩餘空間的比例。 */
+body { /* 選取整個網頁的可見內容，控制全頁背景與預設字型。 */
+    margin: 0; /* 去掉瀏覽器預設的頁面外距，背景從畫面邊緣開始。 */
+    font-family: Arial, Helvetica, sans-serif; /* 字型優先 Arial，沒有則用 Helvetica，再用系統無襯線字型。 */
+    background-color: #078cd1; /* 全頁藍色底色；要改外圍背景顏色，改這個色碼。 */
+    background-image: /* 下方兩層漸層疊在底色上，形成重複花紋；這個宣告到最後分號才結束。 */
+        linear-gradient(45deg, /* 第一層線性漸層；45deg 是斜向角度。 */
+            rgba(255,255,255,0.08) 25%, /* 白色，透明度 0.08；0 是全透明，1 是不透明；25% 是顏色停止點。 */
+            transparent 25%, /* 同在 25% 改成透明，形成明確邊界而非平滑過渡。 */
+            transparent 75%, /* 透明區段維持到 75%。 */
+            rgba(255,255,255,0.08) 75%), /* 從 75% 恢復淡白色；逗號表示還有第二層背景。 */
+        linear-gradient(45deg, /* 第二層斜向漸層，稍後用 background-position 與第一層錯開。 */
+            rgba(255,255,255,0.08) 25%, /* 第二層的淡白色區，透明度越高花紋越明顯。 */
+            transparent 25%, /* 第二層在 25% 切換成透明。 */
+            transparent 75%, /* 第二層透明區到 75%。 */
+            rgba(255,255,255,0.08) 75%); /* 結束第二層漸層和整個 background-image 宣告。 */
+    background-size: 8px 8px; /* 每塊背景花紋寬 8px、高 8px；改大會讓花紋變粗。 */
+    background-position: 0 0, 4px 4px; /* 第一層位置為 0、0；第二層向右、向下各移 4px。 */
+} /* 結束 body 的設定。 */
+.page-wrapper { /* 整頁內容的外層容器，包含標題與主要內容。 */
+    width: 90%; /* 網站占父容器寬度的 90%；調小會增加左右留白。 */
+    max-width: 1000px; /* 電腦版最多寬 1000px；想讓整個網站更寬或更窄改這裡。 */
+    margin: auto; /* 在有設定寬度的區塊上，左右自動外距可水平置中。 */
+} /* 結束整頁寬度設定。 */
+.site-header { /* 左上角網站名稱與標語的共同容器。 */
+    padding: 15px 20px; /* 內距：上下 15px、左右 20px；影響標題與容器邊緣的距離。 */
+    color: white; /* 標題區的預設文字顏色是白色；要改 Logo 文字顏色改這裡。 */
+} /* 結束網站標題容器設定。 */
+.site-header h1 { /* 只選取 site-header 裡的 h1，不會影響其他標題。 */
+    margin: 0; /* 去除大標題外距。 */
+    font-size: 18px; /* 網站名稱字級；想放大 FTDBLUEMOOD 改這裡。 */
+    font-weight: bold; /* 網站名稱使用粗體。 */
+} /* 結束網站名稱設定。 */
+.site-header p { /* 網站標語段落。 */
+    margin: 2px 0 0; /* 外距：上 2px、左右 0、下 0；調第一個值改標語與標題的距離。 */
+    font-size: 8px; /* 標語字級；太小看不清楚可加大。 */
+    font-weight: bold; /* 標語使用粗體。 */
+} /* 結束標語設定。 */
+.main-box { /* 圍住輪播、導覽列、文章與頁尾的大框。 */
+    background: white; /* 網站主要內容白底；改內容整體底色看這裡。 */
+    border: 14px solid #bcecff; /* 外框：14px 寬、實線、淺藍色；可分別改粗細、線型與色碼。 */
+    border-top-width: 12px; /* 上方邊框改為 12px；其他邊仍是 14px。 */
+    margin-bottom: 25px; /* 網站外框底部留 25px 空間，讓外圍背景露出。 */
+} /* 結束主要外框設定。 */
+.header-img { /* 四張輪播圖片都套用這個類別；寬度由 HTML 的 Bootstrap w-100 提供。 */
+    height: 320px; /* 電腦版大圖高度；調大圖片區會變高，調小會變矮。 */
+    object-fit: cover; /* 圖片等比例填满指定尺寸，超出部分裁切；contain 可保留整張但可能留白。 */
+} /* 結束輪播圖片設定；手機高度在檔案底部另有覆寫。 */
+.main-nav { /* 五個連結的藍綠色導覽列。 */
+    height: 56px; /* 電腦版導覽列高度；若文字內距太大，需一起調整 .main-nav a。 */
+    display: flex; /* 使用 Flex 讓導覽連結預設橫向排列。 */
+    justify-content: center; /* 在預設橫向 Flex 中，讓連結群組水平置中。 */
+    align-items: center; /* 在預設橫向 Flex 中，讓連結垂直置中。 */
+    background: linear-gradient( /* 導覽列背景使用漸層；想改整條導覽列顏色，改下面色碼。 */
+        to bottom, /* 漸層方向由上往下。 */
+        #11e2ef 0%, /* 最上方 0% 的亮青色。 */
+        #00bad1 45%, /* 在高度 45% 處使用較深的青色。 */
+        #007c89 55%, /* 在高度 55% 處使用深青色，形成中間明顯的色差。 */
+        #005563 100% /* 最下方 100% 的深色；最後一個顏色後不加逗號。 */
+    ); /* 結束導覽列的漸層宣告。 */
+} /* 結束導覽列容器設定。 */
+.main-nav a { /* 選取導覽列裡每個連結，例如 Home 與 Blog。 */
+    color: white; /* 導覽文字顏色；背景色是上一段 .main-nav 的漸層。 */
+    text-decoration: none; /* 移除連結預設底線。 */
+    font-weight: bold; /* 導覽文字粗體。 */
+    font-size: 14px; /* 導覽文字字級。 */
+    padding: 18px 35px; /* 每個連結內距：上下 18px、左右 35px；左右值可調連結間的距離和點擊範圍。 */
+} /* 結束導覽連結設定。 */
+.main-nav a:hover { /* 滑鼠移到導覽連結上時套用。 */
+    background: rgba(0,0,0,0.15); /* 加上透明度 0.15 的黑色背景，讓該連結稍微變暗。 */
+} /* 結束滑鼠停留效果。 */
+.top-info { /* Your Options、Company News、Have a Question 的共同容器。 */
+    display: grid; /* 使用 CSS Grid 排版；此處不是 Bootstrap 的 row/col。 */
+    grid-template-columns: repeat(3, 1fr); /* 建立三個等寬欄位；把 3 改成 2 可改為兩欄。 */
+    gap: 30px; /* 三欄之間的空隙是 30px；同時指定列與欄間距。 */
+    padding: 25px 40px; /* 資訊區內距：上下 25px、左右 40px。 */
+} /* 結束上方三欄容器設定。 */
+.info-box h2 { /* 上方三個資訊標題。 */
+    color: #00aee8; /* 資訊標題的亮藍色；只改這三個標題顏色看這裡。 */
+    font-size: 20px; /* 資訊標題字級。 */
+    font-weight: normal; /* 資訊標題不用粗體。 */
+} /* 結束資訊標題設定。 */
+.info-content { /* 每欄資訊內的圖示加文字。 */
+    display: flex; /* 讓圖示與文字橫向並排。 */
+    gap: 15px; /* 圖示與文字的間距；改小可以讓它們靠近。 */
+} /* 結束圖示文字容器設定。 */
+.info-content img { /* 上方三欄的小圖示。 */
+    width: 55px; /* 小圖示指定寬度。 */
+    height: 55px; /* 小圖示指定高度；Flex 空間不足時寬度仍可能收縮。 */
+    object-fit: contain; /* 在圖片顯示框內保留完整圖示，不裁切，可能有留白。 */
+} /* 結束小圖示設定。 */
+.info-content p { /* 上方資訊欄的一般段落。 */
+    font-size: 11px; /* 資訊欄說明文字字級。 */
+    color: #555; /* 資訊欄說明文字灰色。 */
+} /* 結束資訊說明設定。 */
+.info-content a { /* 上方資訊欄內的連結。 */
+    color: #00aee8; /* 只改資訊欄連結的藍色。 */
+} /* 結束資訊連結設定。 */
+.middle-area { /* 中間的人物面板與右側清單面板。 */
+    display: grid; /* 用 CSS Grid 建立左右兩欄。 */
+    grid-template-columns: 2fr 1fr; /* 扣除間距後左欄占 2 份、右欄占 1 份；改成 3fr 1fr 會讓左欄更寬。 */
+    gap: 12px; /* 左右面板相隔 12px。 */
+    padding: 25px; /* 中間區四邊內距都是 25px。 */
+} /* 結束中間兩欄設定。 */
+.people-panel, /* 逗號表示下一個選取器也共用同一組設定；這裡是左側人物面板。 */
+.links-panel { /* 右側清單面板也使用以下背景、邊框、內距。 */
+    background: #c9f4ff; /* 兩個面板共用淺藍底色；改中間面板背景看這裡。 */
+    border: 1px solid #aaa; /* 面板的 1px 灰色實線邊框。 */
+    padding: 15px; /* 面板內容與邊框之間留 15px。 */
+} /* 結束兩個面板共用的設定。 */
+.people-panel h2, /* 左側人物標題；逗號表示與下面標題共用設定。 */
+.links-panel h2, /* 右側清單標題。 */
+.bottom-area h2 { /* 下方文章標題也使用以下顏色和字級。 */
+    color: #00aee8; /* 中間及下方標題的亮藍色。 */
+    font-size: 20px; /* 中間及下方標題字級。 */
+    font-weight: normal; /* 中間及下方標題不用粗體。 */
+} /* 結束中間及下方標題設定。 */
+.people-grid { /* 左側四組人物的排版容器。 */
+    display: grid; /* 用 Grid 排人物項目。 */
+    grid-template-columns: 1fr 1fr; /* 兩個等寬欄位；四組人物依序排成兩列。 */
+    gap: 20px; /* 人物項目之間的水平與垂直間距都是 20px。 */
+} /* 結束人物清單排版。 */
+.person { /* 一組人物照片與介紹文字的共同容器。 */
+    display: flex; /* 照片與介紹文字橫向並排。 */
+    gap: 15px; /* 照片與介紹文字的距離。 */
+} /* 結束單組人物排版。 */
+.person img { /* 四張人物照片共用此設定。 */
+    width: 110px; /* 人物照片指定寬度；在 Flex 空間不足時可能收縮。 */
+    height: 110px; /* 人物照片高度；同時調寬高可改照片顯示尺寸。 */
+    object-fit: cover; /* 填滿照片框，保持比例，裁切超出的部分。 */
+    border: 1px solid #999; /* 人物照片的灰色細邊框。 */
+} /* 結束人物照片設定。 */
+.person p { /* 人物介紹段落。 */
+    font-size: 11px; /* 人物介紹字級。 */
+    color: #555; /* 人物介紹文字顏色。 */
+} /* 結束人物介紹設定。 */
+.links-panel ul { /* 右側連結清單。 */
+    padding-left: 20px; /* 清單左側內距，影響項目符號與文字的縮排。 */
+} /* 結束清單縮排設定。 */
+.links-panel li { /* 清單中的每個項目。 */
+    margin-bottom: 7px; /* 每個清單項目下方留 7px；調小可讓清單更密。 */
+} /* 結束清單項目設定。 */
+.links-panel a { /* 右側面板內的所有連結，包括 READ MORE。 */
+    font-size: 10px; /* 右側連結字級。 */
+    color: #222; /* 右側連結使用深灰色；READ MORE 另有覆寫。 */
+} /* 結束右側連結設定。 */
+.read-more { /* 只有帶 read-more 類別的連結會套用；目前是右側面板那個連結。 */
+    color: #00aee8 !important; /* 強制優先使用亮藍色，覆蓋 .links-panel a 的深灰色；不建議隨意增加 important。 */
+    font-weight: bold; /* 閱讀更多連結使用粗體。 */
+} /* 結束 read-more 設定。 */
+.bottom-area { /* 下方左右兩篇文章的共同容器。 */
+    display: grid; /* 使用 Grid 排版。 */
+    grid-template-columns: 2fr 1fr; /* 左側文章占 2 份，右側圖片文章占 1 份；修改下方欄寬比例看這裡。 */
+    gap: 30px; /* 下方左右文章的間距。 */
+    padding: 15px 30px 40px; /* 內距：上 15px、左右 30px、下 40px；最後一個值影響文章與頁尾距離。 */
+} /* 結束下方區域設定。 */
+.bottom-area p, /* 下方一般段落與下一行的粗體摘要共用字級。 */
+.bottom-area strong { /* 下方粗體摘要；不改變 strong 的強調語意。 */
+    font-size: 11px; /* 下方段落和摘要字級。 */
+} /* 結束下方文章字級設定。 */
+.bottom-area a { /* 下方兩篇文章的 READ MORE 連結。 */
+    color: #00aee8; /* 下方連結的亮藍色。 */
+    font-size: 11px; /* 下方連結字級。 */
+    font-weight: bold; /* 下方連結粗體。 */
+} /* 結束下方連結設定。 */
+.bottom-img { /* 下方右側文章中的圖片。 */
+    width: 100%; /* 圖片占滿右側文章內容寬度；父欄寬度由 .bottom-area 決定。 */
+    height: 95px; /* 下方圖片高度；想把圖片拉高改這裡。 */
+    object-fit: cover; /* 等比例填滿顯示框並裁切，不是把圖片拉伸變形。 */
+} /* 結束下方圖片設定。 */
+footer { /* 所有 footer 頁尾元素；本頁只有一個。 */
+    background: linear-gradient( /* 頁尾背景漸層；改下面兩個色碼可改頁尾顏色。 */
+        to bottom, /* 頁尾由上往下漸層。 */
+        #00d9ed, /* 頁尾頂部亮青色，省略位置時第一個色預設在 0%。 */
+        #007e91 /* 頁尾底部深青色，省略位置時最後一個色預設在 100%。 */
+    ); /* 結束頁尾漸層宣告。 */
+    color: white; /* 頁尾文字白色。 */
+    text-align: center; /* 頁尾文字水平置中。 */
+    padding: 22px; /* 頁尾四邊內距；調大會增加留白，並讓頁尾更高。 */
+    font-size: 9px; /* 版權文字字級。 */
+} /* 結束頁尾設定。 */
+@media (max-width: 768px) { /* 視窗寬度小於或等於 768px 才套用；這是手機與窄視窗的覆寫區。 */
+    .header-img { /* 窄視窗的輪播大圖。 */
+        height: 220px; /* 覆寫前面的 320px；如果只改電腦版，手機仍維持這個高度。 */
+    } /* 結束手機大圖設定。 */
+    .main-nav { /* 窄視窗的導覽列容器。 */
+        flex-wrap: wrap; /* 導覽連結寬度不夠時，允許換到下一列。 */
+        height: auto; /* 導覽列高度由內容決定，覆寫電腦版固定的 56px。 */
+    } /* 結束手機導覽列容器設定。 */
+    .main-nav a { /* 窄視窗的每個導覽連結。 */
+        padding: 12px 15px; /* 上下 12px、左右 15px；比電腦版更小，讓連結適合手機寬度。 */
+    } /* 結束手機導覽連結設定。 */
+    .top-info { /* 窄視窗的上方資訊區。 */
+        grid-template-columns: 1fr; /* 改成一欄，三個資訊框由上到下排列。 */
+    } /* 結束手機資訊區設定。 */
+    .middle-area { /* 窄視窗的中間面板區。 */
+        grid-template-columns: 1fr; /* 人物面板與清單面板改為上下排列。 */
+    } /* 結束手機中間面板設定。 */
+    .people-grid { /* 窄視窗的人物清單。 */
+        grid-template-columns: 1fr; /* 每列只放一組人物；每組內的照片與文字仍是 Flex 並排。 */
+    } /* 結束手機人物清單設定。 */
+    .bottom-area { /* 窄視窗的下方文章區。 */
+        grid-template-columns: 1fr; /* 左右兩篇文章改成上下排列。 */
+    } /* 結束手機下方文章設定。 */
+} /* 結束整個 media 區塊；以上手機規則只有視窗寬度符合條件時生效。 */
